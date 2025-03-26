@@ -5,29 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Logs</title>
+    <title>Logs {{ $totalLogs }}</title>
     @vite(['resources/css/app.css'])
 </head>
 
 <body>
+    @include('layout.header')
+    <a class="btn btn-ghost font-mono text-2xl p-[30px] cursor-text"> Total Logs: {{ $totalLogs }}</a>
     <div class="overflow-x-auto rounded-box border border-base-content/5 bg-base-100">
         <table class="table table-zebra">
 
             <thead>
                 <tr class="font-serif text-3xl">
                     {{-- <th>ID</th> --}}
-                    <th>Log Level</th>
-                    <th>Log</th>
+                    <th>Level Name</th>
+                    <th>Level</th>
+                    <th>Context</th>
+                    <th>Message</th>
                     <th>Actions</th>
 
                 </tr>
             </thead>
             <tbody>
-                <!-- row 1 -->
+
                 @foreach ($logs as $log)
                     <tr class="font-mono text-xl">
 
                         <td>{{ $log->level }}</td>
+                        <td>{{ $log->levelNum }}</td>
+                        <td>{{ $log->context }}</td>
                         <td>{{ $log->message }}</td>
                         <td>
                             <div class="flex gap-[20px] ">
@@ -47,6 +53,7 @@
             </tbody>
         </table>
     </div>
+    @include('layout.footer')
 </body>
 
 </html>

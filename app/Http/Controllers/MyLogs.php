@@ -14,8 +14,9 @@ class MyLogs extends Controller
      */
     public function index()
     {
- $logs=MyLog::all();
- return view("log.index",compact("logs"));
+     $totalLogs=MyLog::all()->count();
+     $logs=MyLog::all();
+     return view("log.index",compact("logs","totalLogs"));
 
     }
 
@@ -33,15 +34,16 @@ class MyLogs extends Controller
     public function store(Request $request)
     {
 
-        $validateLevels=["error","warning","info"];
+        $context=$request->context;
+        $levelNum=$request->levelNum;
         $level=$request->level;
         $message=$request->message;
         $logs=$request->all();
-        if(in_array($level,$validateLevels)){
         Log::$level($message);
         MyLog::create($logs);
-        }
-       return redirect()->route("logs.index",compact("logs"));
+
+
+   return redirect()->route("logs.index",compact("logs"));
     }
 
     /**

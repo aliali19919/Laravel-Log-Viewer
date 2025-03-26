@@ -10,7 +10,8 @@
 </head>
 
 <body>
-    <div class="max-w-md mx-auto mt-[300px]">
+    @include('layout.header')
+    <div class="max-w-fit mx-auto my-[300px]">
         <div
             class="card shadow-lg bg-base-100 hover:scale-[1.02] hover:shadow-xl transition-transform duration-300 ease-in-out">
             <div class="card-body space-y-[50px]">
@@ -23,6 +24,7 @@
             </div>
         </div>
     </div>
+    @include('layout.footer')
 </body>
 
 </html>

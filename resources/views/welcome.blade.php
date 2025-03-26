@@ -10,7 +10,8 @@
 </head>
 
 <body>
-    <div class="max-w-xl mx-auto mt-[300px]">
+    @include('layout.header')
+    <div class="max-w-xl mx-auto my-[300px]">
         <div class="card shadow-xl bg-base-100 animate-fade-in-up">
             <div class="card-body text-center">
                 <h1 class="text-4xl font-bold text-primary my-[20px]">Welcome to Ali's LogViewer</h1>
@@ -24,6 +25,7 @@
         </div>
     </div>
     </div>
+    @include('layout.footer')
 </body>
 
 </html>

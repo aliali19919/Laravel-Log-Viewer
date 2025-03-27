@@ -61,6 +61,8 @@ class MyLogs extends Controller
     public function edit(string $id)
     {
 
+
+
     }
 
     /**
@@ -68,7 +70,11 @@ class MyLogs extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $log=MyLog::findOrFail($id);
+        $log->comment=$request->comment;
+        $log->save();
+
+        return redirect()->route('logs.show',$log->id);
     }
 
     /**

@@ -15,7 +15,7 @@ class MyLogs extends Controller
     public function index()
     {
      $totalLogs=MyLog::all()->count();
-     $logs=MyLog::all();
+     $logs=MyLog::paginate(10);
      return view("log.index",compact("logs","totalLogs"));
 
     }

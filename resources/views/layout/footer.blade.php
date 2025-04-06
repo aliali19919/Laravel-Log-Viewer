@@ -1,4 +1,4 @@
-<footer class="footer sm:footer-horizontal bg-neutral text-neutral-content items-center p-4">
+<footer class="footer sm:footer-horizontal bg-neutral text-neutral-content items-center fixed bottom-0 p-4">
     <div class="flex gap-[450px]">
         <svg width="36" height="36" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
             clip-rule="evenodd" class="fill-current">

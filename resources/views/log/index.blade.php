@@ -52,6 +52,10 @@
                 </tr>
             </tbody>
         </table>
+        <div class="my-[20px] p-[60px]">
+            {{ $logs->links() }}
+        </div>
+
     </div>
     @include('layout.footer')
 </body>
